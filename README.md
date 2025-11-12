@@ -65,5 +65,8 @@ Vcc(5V), GND, 그리고 'Analog Out' 핀 1개만 ATmega128A의 ADC 포트에 연
 CodeVisionAVR의 코드 마법사에서 ADC를 활성화하고, read_adc(0) 함수 한 줄로 센서 값을 읽을 수 있기에 mpu보다 더 쉽게 설계가 가능하다.
 
 # 하드웨어 설계 
+컨트롤 타워 + 메인 사료 배출기
+
+# 발생할 수 있는 오차 및 예외 상황
 
 
