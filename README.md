@@ -23,22 +23,24 @@ Atmega128을 이용하여 기본적인 설계, Codevision과 AVR studio 4를 이
 현재 시간 읽기 (RTC)
 
 급식 시간대 확인
-         ''' if 현재 시간이 급식 시간대 && feedCount > 0:
-              LED = 녹색
-          모터 ON (목표량에 해당하는 시간만 작동)
-          모터 OFF
-          LED = 흰색
-          7세그에 feedCount 표시
-          상태 = "급식 완료, 섭취 대기"
-          섭취 감지 (MPU-6050)
-          일정 시간(예: 5초) 동안 가속도/자이로 값 변화량 > threshold
-          if true && cooldown == false:
-            feedCount -= 1
-          7세그 feedCount 업데이트
-          LED = 파랑 (대기 모드)
-          cooldown = true (예: 10분 동안 재감지 무시)
-          쿨다운 관리
-          일정 시간 지나면 cooldown 해제'''
+'''
+if 현재 시간이 급식 시간대 && feedCount > 0:
+            LED = 녹색
+            모터 ON (목표량에 해당하는 시간만 작동)
+            모터 OFF
+            LED = 흰색
+            7세그에 feedCount 표시
+            상태 = "급식 완료, 섭취 대기"
+            섭취 감지 (MPU-6050)
+            일정 시간(예: 5초) 동안 가속도/자이로 값 변화량 > threshold
+                      if true && cooldown == false:
+                        feedCount -= 1
+                        7세그 feedCount 업데이트
+                        LED = 파랑 (대기 모드)
+                        cooldown = true (예: 10분 동안 재감지 무시)
+                        쿨다운 관리
+                        일정 시간 지나면 cooldown 해제
+'''
 
 codeVision에서 코드 작성하고 AVR studio 4에서 디버깅을 해야한다.
 
